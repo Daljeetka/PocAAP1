@@ -1,0 +1,64 @@
+<!DOCTYPE HTML>
+
+<html ng-app="app">
+<head>
+	  <title>Augmented Analytics Demo Page</title>
+	  <meta charset="utf-8" />
+	  <meta name="viewport" content="width=device-width, initial-scale=1" />
+	  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+	  <script src="/js/angularJsApp.js"></script>
+	   <script src="https://code.highcharts.com/highcharts.js"></script>
+      
+      <script src="/js/chart.service.js"></script>
+      <script src="/js/report.service.js"></script>
+ 
+ 
+      
+	  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+</head>
+
+<body>
+<div class="container"  ng-controller="jsaController">
+    <div class="row col-md-7">
+    	<div>
+    		<h3 style="color:#669999">Select any text to generate Analysis Report/Chart</h3>
+    		<form>
+    			<label for="jsaSelect">Make a choice:</label>
+	    		<select id="jsaSelect" ng-options="cust.id as cust.name for cust in listCustomers" ng-model="selectedCustomer" ng-change="showDetails()">
+				</select>
+			</form>
+			 
+			<br/>
+			<br/>
+			<p style="padding:20px 20px 20px 20px;background-color:#003300;color:white"	>
+			Sql Json Structure: 
+				<br/>
+				
+				{{sqlJson}}
+			</p>
+			
+			
+			
+			<p style="padding:20px 20px 20px 20px;background-color:#003300;color:white"	>
+			 Bar Chart: 
+				<br/> 
+			</p>
+<!-- 			<div ng-controller="RealTimeReportingController">
+    <div id="realTimeDataBarChart">
+    
+    </div>
+</div>
+-->
+		<div ng-controller="BasicReportController">
+    <div id="reportChart">
+    
+    </div>
+</div>
+
+    	</div>
+    </div>
+    
+</div>
+
+</body>
+</html>
